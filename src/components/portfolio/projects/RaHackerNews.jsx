@@ -1,9 +1,13 @@
-import React from "react";
+import { useContext } from "react";
+import { PortfolioContext } from "../../../context/context";
+import Modal from "react-modal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const RaHackerNews = () => {
+const RaHackerNews = ({ data }) => {
+  const { isOpen05, toggleModal05 } = useContext(PortfolioContext);
+
   var settings = {
     dots: true,
     infinite: true,
@@ -12,99 +16,137 @@ const RaHackerNews = () => {
     slidesToScroll: 1,
     draggable: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
   };
 
   return (
-    <div className="slideshow">
-      <figure>
-        {/* Project Details Starts */}
-        <figcaption>
-          <h3>Hacker News</h3>
-          <p className="text-center">Filter tech news according to your preferences.
-          <br/>
-          Check out your favorite articles on Hacker News 📰</p>
-          <div className="row open-sans-font">
-          <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-folder-o pr-2"></i>
-              <span className="project-label">Project </span>:{" "}
-              <span className="ft-wt-600 uppercase">Hacker News</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-globe pr-2"></i>
-              <span className="project-label">Live App </span>{" "}
-              <span className="ft-wt-600 uppercase">
-                <a
-                  href="https://ioannis-sporidis.github.io/ra-hacker-news/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Here
-                </a>
-              </span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-external-link pr-2"></i>
-              <span className="project-label">App Repo </span>{" "}
-              <span className="ft-wt-600 uppercase">
-                <a
-                  href="https://github.com/ioannis-sporidis/ra-hacker-news"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Here
-                </a>
-              </span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-file-text-o pr-2"></i>
-              <span className="project-label">Type </span>:{" "}
-              <span className="ft-wt-600 uppercase">React App</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-user-o pr-2"></i>
-              <span className="project-label">Client </span>:{" "}
-              <span className="ft-wt-600 uppercase">personal project</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-code pr-2"></i>
-              <span className="project-label">Langages </span>:{" "}
-              <span className="ft-wt-600 uppercase">React.js</span>
-            </div>
-            {/* End .col */}
-
-          </div>
-          {/* End .row */}
-        </figcaption>
-        {/* Project Details Ends */}
-
-        {/*  Main Project Content Starts */}
-        <Slider {...settings}>
-          <div className="slide_item">
-            <img src="img/projects/ra-hacker-news-1.jpg" alt="slide 1" />
-          </div>
-          <div className="slide_item">
-            <img src="img/projects/ra-hacker-news-2.jpg" alt="slide 2" />
-          </div>
-          <div className="slide_item">
-            <img src="img/projects/ra-hacker-news-3.jpg" alt="slide 3" />
-          </div>
-        </Slider>
-        {/* Main Project Content Ends */}
+    <>
+    <li
+      data-aos="fade-right"
+      data-aos-duration="1200"
+      data-aos-delay={data.delay}
+    >
+      <figure onClick={toggleModal05}>
+        <img src={data.image1} alt={data.title} />
+        <div className=" hover-content-wrapper">
+          <span className="content-title">{data.title}</span>
+        </div>
       </figure>
-    </div>
-    //  End .slideshow
+
+      <Modal
+        isOpen={isOpen05}
+        onRequestClose={toggleModal05}
+        contentLabel="My dialog"
+        className="custom-modal dark"
+        overlayClassName="custom-overlay dark"
+        closeTimeoutMS={500}
+      >
+        <div>
+          <button className="close-modal" onClick={toggleModal05}>
+            <img src="/img/cancel.svg" alt="close icon" />
+          </button>
+
+          <div className="box_inner portfolio">
+            <div className="slideshow">
+              <figure>
+                {/* Project Details Starts */}
+                <figcaption>
+                  <h3>{data.title}</h3>
+                  <p className="text-center">{data.description}</p>
+                  <div className="row open-sans-font">
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-folder-o pr-2"></i>
+                      <span className="project-label">Project </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.title}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-globe pr-2"></i>
+                      <span className="project-label">Live App </span>{" "}
+                      <span className="ft-wt-600 uppercase">
+                        <a
+                          href={data.live_url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Here
+                        </a>
+                      </span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-external-link pr-2"></i>
+                      <span className="project-label">App Repo </span>{" "}
+                      <span className="ft-wt-600 uppercase">
+                        <a
+                          href={data.repo_url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Here
+                        </a>
+                      </span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-file-text-o pr-2"></i>
+                      <span className="project-label">Type </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.type}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-user-o pr-2"></i>
+                      <span className="project-label">Client </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.client}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-code pr-2"></i>
+                      <span className="project-label">Langages </span>:{" "}
+                      <span className="ft-wt-600 uppercase">
+                        {data.language}
+                      </span>
+                    </div>
+                    {/* End .col */}
+                  </div>
+                  {/* End .row */}
+                </figcaption>
+                {/* Project Details Ends */}
+
+                {/*  Main Project Content Starts */}
+                <Slider {...settings}>
+                  <div className="slide_item">
+                    <img
+                      src={data.image1}
+                      alt="slide 1"
+                    />
+                  </div>
+                  <div className="slide_item">
+                    <img
+                      src={data.image2}
+                      alt="slide 2"
+                    />
+                  </div>
+                  <div className="slide_item">
+                    <img
+                      src={data.image3}
+                      alt="slide 3"
+                    />
+                  </div>
+                </Slider>
+                {/* Main Project Content Ends */}
+              </figure>
+            </div>
+          </div>
+        </div>
+      </Modal>
+      </li>
+    </>
   );
 };
-
 export default RaHackerNews;

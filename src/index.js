@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { PortfolioProvider } from "./context/context";
 import "./assets/scss/main.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PortfolioProvider>
+      <App />
+    </PortfolioProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

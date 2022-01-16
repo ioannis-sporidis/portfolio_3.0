@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const RaCocktailDb = ({ data }) => {
-  const { isOpen00, toggleModal00 } = useContext(PortfolioContext);
+const RaMarkdownPreview = ({ data }) => {
+  const { isOpen07, toggleModal07 } = useContext(PortfolioContext);
 
   var settings = {
     dots: true,
@@ -26,7 +26,7 @@ const RaCocktailDb = ({ data }) => {
       data-aos-duration="1200"
       data-aos-delay={data.delay}
     >
-      <figure onClick={toggleModal00}>
+      <figure onClick={toggleModal07}>
         <img src={data.image1} alt={data.title} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{data.title}</span>
@@ -34,15 +34,15 @@ const RaCocktailDb = ({ data }) => {
       </figure>
 
       <Modal
-        isOpen={isOpen00}
-        onRequestClose={toggleModal00}
+        isOpen={isOpen07}
+        onRequestClose={toggleModal07}
         contentLabel="My dialog"
         className="custom-modal dark"
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
       >
         <div>
-          <button className="close-modal" onClick={toggleModal00}>
+          <button className="close-modal" onClick={toggleModal07}>
             <img src="/img/cancel.svg" alt="close icon" />
           </button>
 
@@ -149,4 +149,4 @@ const RaCocktailDb = ({ data }) => {
     </>
   );
 };
-export default RaCocktailDb;
+export default RaMarkdownPreview;

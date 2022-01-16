@@ -1,9 +1,13 @@
-import React from "react";
+import { useContext } from "react";
+import { PortfolioContext } from "../../../context/context";
+import Modal from "react-modal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const RaGroceryBuddy = () => {
+const RaGroceryBuddy = ({ data }) => {
+  const { isOpen04, toggleModal04 } = useContext(PortfolioContext);
+
   var settings = {
     dots: true,
     infinite: true,
@@ -12,97 +16,137 @@ const RaGroceryBuddy = () => {
     slidesToScroll: 1,
     draggable: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
   };
 
   return (
-    <div className="slideshow">
-      <figure>
-        {/* Project Details Starts */}
-        <figcaption>
-          <h3>Grocery Buddy</h3>
-          <p className="text-center">A shopping list for your grocery needs. Add, delete or edit the items you need 🥫</p>
-          <div className="row open-sans-font">
-          <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-folder-o pr-2"></i>
-              <span className="project-label">Project </span>:{" "}
-              <span className="ft-wt-600 uppercase">Grocery Buddy</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-globe pr-2"></i>
-              <span className="project-label">Live App </span>{" "}
-              <span className="ft-wt-600 uppercase">
-                <a
-                  href="https://ioannis-sporidis.github.io/ra-grocery-buddy/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Here
-                </a>
-              </span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-external-link pr-2"></i>
-              <span className="project-label">App Repo </span>{" "}
-              <span className="ft-wt-600 uppercase">
-                <a
-                  href="https://github.com/ioannis-sporidis/ra-grocery-buddy"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Here
-                </a>
-              </span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-file-text-o pr-2"></i>
-              <span className="project-label">Type </span>:{" "}
-              <span className="ft-wt-600 uppercase">React App</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-user-o pr-2"></i>
-              <span className="project-label">Client </span>:{" "}
-              <span className="ft-wt-600 uppercase">personal project</span>
-            </div>
-            {/* End .col */}
-
-            <div className="col-12 col-sm-4 mb-2">
-              <i className="fa fa-code pr-2"></i>
-              <span className="project-label">Langages </span>:{" "}
-              <span className="ft-wt-600 uppercase">React.js</span>
-            </div>
-            {/* End .col */}
-
-          </div>
-          {/* End .row */}
-        </figcaption>
-        {/* Project Details Ends */}
-
-        {/*  Main Project Content Starts */}
-        <Slider {...settings}>
-          <div className="slide_item">
-            <img src="img/projects/ra-grocery-buddy-1.jpg" alt="slide 1" />
-          </div>
-          <div className="slide_item">
-            <img src="img/projects/ra-grocery-buddy-2.jpg" alt="slide 2" />
-          </div>
-          <div className="slide_item">
-            <img src="img/projects/ra-grocery-buddy-3.jpg" alt="slide 3" />
-          </div>
-        </Slider>
-        {/* Main Project Content Ends */}
+    <>
+    <li
+      data-aos="fade-right"
+      data-aos-duration="1200"
+      data-aos-delay={data.delay}
+    >
+      <figure onClick={toggleModal04}>
+        <img src={data.image1} alt={data.title} />
+        <div className=" hover-content-wrapper">
+          <span className="content-title">{data.title}</span>
+        </div>
       </figure>
-    </div>
-    //  End .slideshow
+
+      <Modal
+        isOpen={isOpen04}
+        onRequestClose={toggleModal04}
+        contentLabel="My dialog"
+        className="custom-modal dark"
+        overlayClassName="custom-overlay dark"
+        closeTimeoutMS={500}
+      >
+        <div>
+          <button className="close-modal" onClick={toggleModal04}>
+            <img src="/img/cancel.svg" alt="close icon" />
+          </button>
+
+          <div className="box_inner portfolio">
+            <div className="slideshow">
+              <figure>
+                {/* Project Details Starts */}
+                <figcaption>
+                  <h3>{data.title}</h3>
+                  <p className="text-center">{data.description}</p>
+                  <div className="row open-sans-font">
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-folder-o pr-2"></i>
+                      <span className="project-label">Project </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.title}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-globe pr-2"></i>
+                      <span className="project-label">Live App </span>{" "}
+                      <span className="ft-wt-600 uppercase">
+                        <a
+                          href={data.live_url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Here
+                        </a>
+                      </span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-external-link pr-2"></i>
+                      <span className="project-label">App Repo </span>{" "}
+                      <span className="ft-wt-600 uppercase">
+                        <a
+                          href={data.repo_url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Here
+                        </a>
+                      </span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-file-text-o pr-2"></i>
+                      <span className="project-label">Type </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.type}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-user-o pr-2"></i>
+                      <span className="project-label">Client </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{data.client}</span>
+                    </div>
+                    {/* End .col */}
+
+                    <div className="col-12 col-sm-4 mb-2">
+                      <i className="fa fa-code pr-2"></i>
+                      <span className="project-label">Langages </span>:{" "}
+                      <span className="ft-wt-600 uppercase">
+                        {data.language}
+                      </span>
+                    </div>
+                    {/* End .col */}
+                  </div>
+                  {/* End .row */}
+                </figcaption>
+                {/* Project Details Ends */}
+
+                {/*  Main Project Content Starts */}
+                <Slider {...settings}>
+                  <div className="slide_item">
+                    <img
+                      src={data.image1}
+                      alt="slide 1"
+                    />
+                  </div>
+                  <div className="slide_item">
+                    <img
+                      src={data.image2}
+                      alt="slide 2"
+                    />
+                  </div>
+                  <div className="slide_item">
+                    <img
+                      src={data.image3}
+                      alt="slide 3"
+                    />
+                  </div>
+                </Slider>
+                {/* Main Project Content Ends */}
+              </figure>
+            </div>
+          </div>
+        </div>
+      </Modal>
+      </li>
+    </>
   );
 };
-
 export default RaGroceryBuddy;
