@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# How to add a new portfolio item
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Update the data`
 
-## Available Scripts
+- Add the next section on either portfolio/data/react_apps or react_components.
+- Don't forget to update the delay according to the previous item (ex. if it's 0 next is 100)
 
-In the project directory, you can run:
+### `Add a new project to the correct folder`
 
-### `npm start`
+- If it is a react app go to portfolio/react_apps
+- If it is a react component go to portfolio/react_component
+- Copy and paste one of the existing items there.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Update the new item`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Update the name of the file.
+- Inside the file update line 8 and line 152 with the same name.
+- Update lines 9 / 29 / 37 / 38 / 45 with the correct toggleModal and isOpen (should be the next number - from the previous item).
 
-### `npm test`
+### `Add the file name to the corresponding index.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure to import and export the file.
 
-### `npm run build`
+### `Add the item in portfolio.js`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Import the file either after line 4 (if it is an app) or after line 16 (if it is a component).
+- Find the correct section of the tab you want to add the component to.
+- Add the item as a component at the end of that section.
+- Update the data props with the correct number corresponding to the index of the data in the data file.
+- Add a comment with a description.

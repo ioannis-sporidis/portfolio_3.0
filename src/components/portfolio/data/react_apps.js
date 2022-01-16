@@ -47,7 +47,7 @@ const react_apps = [
   {
     //3
     title: "Github User",
-    description: "Search for your favorite github users and see their stats 👤",
+    description: "Search for your favorite github users and see their stats 👥",
     image1: "img/projects/ra-github-users-1.jpg",
     image2: "img/projects/ra-github-users-2.jpg",
     image3: "img/projects/ra-github-users-3.jpg",
@@ -130,6 +130,20 @@ const react_apps = [
     client: "personal project",
     language: "React.js",
     delay: "200",
+  },
+  {
+    //9
+    title: "Voyagers Tours",
+    description: "Promo page for an imaginery travel agency 🧳",
+    image1: "img/projects/ra-tours-landing-page-1.jpg",
+    image2: "img/projects/ra-tours-landing-page-2.jpg",
+    image3: "img/projects/ra-tours-landing-page-3.jpg",
+    repo_url: "https://github.com/ioannis-sporidis/ra-tours-landing-page",
+    live_url: "https://ioannis-sporidis.github.io/ra-tours-landing-page/",
+    type: "React App",
+    client: "personal project",
+    language: "React.js",
+    delay: "0",
   },
 ];
 
