@@ -6,6 +6,7 @@ import RaGroceryBuddy from "./RaGroceryBuddy";
 import RaHackerNews from "./RaHackerNews";
 import RaMarkdownPreview from "./RaMarkdownPreview";
 import RaPokedexApp from "./RaPokedexApp";
+import RaQuizApp from "./RaQuizApp";
 
 export {
   RaCocktailDb,
@@ -16,4 +17,5 @@ export {
   RaHackerNews,
   RaMarkdownPreview,
   RaPokedexApp,
+  RaQuizApp,
 };

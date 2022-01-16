@@ -5,7 +5,7 @@ import Index from "../../components/about/index";
 const heroContent = {
   heroImage: "img/hero/dark.jpg",
   heroMobileImage: "img-mobile",
-  heroTitleName: "Giannis Sporidis",
+  heroTitleName: "Giannis Sporidis Foster",
   heroDesignation: "web designer",
   heroDescriptions: `Web designer, front‑end developer and dog lover.`,
   heroBtn: "more about me",

@@ -116,6 +116,21 @@ const react_apps = [
     language: "React.js",
     delay: "100",
   },
+  {
+    //8
+    title: "Quiz App",
+    description:
+      "Solve fun, multiple choise quizes. Choose level and category.",
+    image1: "img/projects/ra-quiz-app-1.jpg",
+    image2: "img/projects/ra-quiz-app-2.jpg",
+    image3: "img/projects/ra-quiz-app-3.jpg",
+    repo_url: "https://github.com/ioannis-sporidis/ra-quiz",
+    live_url: "https://ioannis-sporidis.github.io/ra-quiz/",
+    type: "React App",
+    client: "personal project",
+    language: "React.js",
+    delay: "200",
+  },
 ];
 
 export default react_apps;

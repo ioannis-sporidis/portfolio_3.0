@@ -19,11 +19,14 @@ const menuItem = [
 const HomeDark = () => {
   return (
     <div className="yellow">
-      <div className="demo-sticker">
+      
+      {/* Light / Dark Mode button */}
+      {/* <div className="demo-sticker">
         <a href="/home-light">
           <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
         </a>
-      </div>
+      </div> */}
+
       <Tabs>
         <div className="header">
           <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">

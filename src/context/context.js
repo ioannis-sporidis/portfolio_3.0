@@ -11,6 +11,7 @@ const PortfolioProvider = ({ children }) => {
   const [isOpen05, setIsOpen05] = useState(false);
   const [isOpen06, setIsOpen06] = useState(false);
   const [isOpen07, setIsOpen07] = useState(false);
+  const [isOpen08, setIsOpen08] = useState(false);
 
   const toggleModal00 = () => setIsOpen00(!isOpen00);
   const toggleModal01 = () => setIsOpen01(!isOpen01);
@@ -20,6 +21,7 @@ const PortfolioProvider = ({ children }) => {
   const toggleModal05 = () => setIsOpen05(!isOpen05);
   const toggleModal06 = () => setIsOpen06(!isOpen06);
   const toggleModal07 = () => setIsOpen07(!isOpen07);
+  const toggleModal08 = () => setIsOpen08(!isOpen08);
 
   return (
     <PortfolioContext.Provider
@@ -32,6 +34,7 @@ const PortfolioProvider = ({ children }) => {
         isOpen05,
         isOpen06,
         isOpen07,
+        isOpen08,
         toggleModal00,
         toggleModal01,
         toggleModal02,
@@ -40,6 +43,7 @@ const PortfolioProvider = ({ children }) => {
         toggleModal05,
         toggleModal06,
         toggleModal07,
+        toggleModal08,
       }}
     >
       {children}

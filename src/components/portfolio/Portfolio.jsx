@@ -9,6 +9,7 @@ import {
   RaHackerNews,
   RaMarkdownPreview,
   RaPokedexApp,
+  RaQuizApp,
 } from "./projects"
 
 const Portfolio = () => {
@@ -33,7 +34,8 @@ const Portfolio = () => {
               <RaGroceryBuddy data={react_apps[4]}/> {/* <!-- Grocery Buddy --> */}
               <RaHackerNews data={react_apps[5]}/> {/* <!-- Hacker News --> */}
               <RaMarkdownPreview data={react_apps[6]}/> {/* <!-- Markdown Preview --> */}
-              <RaMarkdownPreview data={react_apps[7]}/> {/* <!-- Pokedex App --> */}
+              <RaPokedexApp data={react_apps[7]}/> {/* <!-- Pokedex App --> */}
+              <RaQuizApp data={react_apps[8]}/> {/* <!-- Quiz App --> */}
           </ul>
         </TabPanel>
         {/* End REACT APPS Tab */}
