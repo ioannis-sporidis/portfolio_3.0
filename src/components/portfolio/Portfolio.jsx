@@ -21,7 +21,11 @@ import {
   RcNavbar,
   RcPagination,
   RcRandomUser,
-  RcRestaurantMenu
+  RcRestaurantMenu,
+  RcShoppingCart,
+  RcSidebarModal,
+  RcSlider,
+  RcTabs
  } from "./react_components";
 
 const Portfolio = () => {
@@ -68,7 +72,10 @@ const Portfolio = () => {
           <RcPagination data={react_components[5]}/> {/* <!-- Pagination --> */}
           <RcRandomUser data={react_components[6]}/> {/* <!-- Random User --> */}
           <RcRestaurantMenu data={react_components[7]}/> {/* <!-- Restaurant Menu --> */}
-
+          <RcShoppingCart data={react_components[8]}/> {/* <!-- Shopping Cart --> */}
+          <RcSidebarModal data={react_components[9]}/> {/* <!-- Sidebar and Modal --> */}
+          <RcSlider data={react_components[10]}/> {/* <!-- Slider --> */}
+          <RcTabs data={react_components[11]}/> {/* <!-- Tabs --> */}
           </ul>
         </TabPanel>
         {/* End REACT COMPONENTS Tab */}

@@ -6,6 +6,10 @@ import RcNavbar from "./RcNavbar";
 import RcPagination from "./RcPagination";
 import RcRandomUser from "./RcRandomUser";
 import RcRestaurantMenu from "./RcRestaurantMenu";
+import RcShoppingCart from "./RcShoppingCart";
+import RcSidebarModal from "./RcSidebarModal";
+import RcSlider from "./RcSlider";
+import RcTabs from "./RcTabs";
 
 export {
   RcAccordion,
@@ -16,4 +20,8 @@ export {
   RcPagination,
   RcRandomUser,
   RcRestaurantMenu,
+  RcShoppingCart,
+  RcSidebarModal,
+  RcSlider,
+  RcTabs,
 };
