@@ -3,8 +3,8 @@ import Modal from "react-modal";
 import Index from "../../components/about/index";
 
 const heroContent = {
-  heroImage: "img/hero/dark.jpg",
-  heroMobileImage: "img-mobile",
+  heroImage: "img/hero/profile-lg.jpg",
+  heroMobileImage: "profile-sm",
   heroTitleName: "Giannis Sporidis Foster",
   heroDesignation: "web designer",
   heroDescriptions: `Web designer, front‑end developer and dog lover.`,
