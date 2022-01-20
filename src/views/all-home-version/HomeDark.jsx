@@ -7,6 +7,7 @@ import Portfolio from "../../components/portfolio/Portfolio";
 import Blog from "../../components/blog/Blog";
 import Contact from "../../components/Contact";
 import Social from "../../components/Social";
+import ParticlesBg from 'particles-bg'
 
 const menuItem = [
   { icon: "fa-home", menuName: "Home" },
@@ -19,6 +20,7 @@ const menuItem = [
 const HomeDark = () => {
   return (
     <div className="yellow">
+      <ParticlesBg type="cobweb" bg={true} color={"#ffb400"} />
       
       {/* Light / Dark Mode button */}
       {/* <div className="demo-sticker">
@@ -41,6 +43,7 @@ const HomeDark = () => {
         {/* End Menu Content */}
 
         <div className="tab-panel_list">
+          
           {/* Hero Content Starts */}
           <TabPanel className="home ">
             <div
